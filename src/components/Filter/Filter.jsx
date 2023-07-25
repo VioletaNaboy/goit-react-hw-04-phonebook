@@ -1,9 +1,7 @@
-import React, { useContext } from 'react';
-import { AppContext } from '../AppContext';
+import React from 'react';
 import css from './Filter.module.css';
-export const Filter = () => {
-  const { filter, handleFilterChange } = useContext(AppContext);
-
+import PropTypes from 'prop-types';
+export const Filter = ({ filter, handleFilterChange }) => {
   return (
     <label className={css.filterLabel}>
       Find contacts by name
@@ -15,5 +13,9 @@ export const Filter = () => {
       />
     </label>
   );
+};
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
 };
 export default Filter;

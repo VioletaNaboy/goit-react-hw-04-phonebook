@@ -1,8 +1,7 @@
-import React, { useContext, useState } from 'react';
-import { AppContext } from '../AppContext';
+import React, { useState } from 'react';
 import css from './ContactsForm.module.css';
-export const ContactForm = () => {
-  const { handleAddContact } = useContext(AppContext);
+import PropTypes from 'prop-types';
+export const ContactForm = ({ handleAddContact }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -43,5 +42,7 @@ export const ContactForm = () => {
     </form>
   );
 };
-
+ContactForm.propTypes = {
+  handleAddContact: PropTypes.func.isRequired,
+};
 export default ContactForm;

@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
-import { AppContext } from '../AppContext';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export const ContactListItem = ({ contact }) => {
-  const { handleDeleteContact } = useContext(AppContext);
-
+export const ContactListItem = ({ contact, handleDeleteContact }) => {
   const handleDelete = () => {
     handleDeleteContact(contact.id);
   };
